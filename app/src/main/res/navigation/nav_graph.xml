@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/WelcomeFragment">
+
+    <fragment
+        android:id="@+id/ArticleListFragment"
+        android:name="com.polinasmogi.articlesandstories.ui.article_list.ArticleListFragment"
+        android:label="@string/content_label"
+        tools:layout="@layout/fragment_article_list">
+                <action
+                    android:id="@+id/action_ArticleListFragment_to_ArticleFragment"
+                    app:destination="@id/ArticleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ArticleFragment"
+        android:name="com.polinasmogi.articlesandstories.ui.article.ArticleFragment"
+        android:label="@string/article_label"
+        tools:layout="@layout/fragment_article">
+    </fragment>
+
+    <fragment
+        android:id="@+id/ContentFragment"
+        android:name="com.polinasmogi.articlesandstories.ui.content.ContentFragment"
+        android:label="@string/content_label"
+        tools:layout="@layout/fragment_content">
+        <action
+            android:id="@+id/action_ArticleListFragment_to_ArticleFragment"
+            app:destination="@id/ArticleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/WelcomeFragment"
+        android:name="com.polinasmogi.articlesandstories.ui.welcome.WelcomeFragment"
+        android:label="@string/welcome_label"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_WelcomeFragment_to_ContentFragment"
+            app:destination="@id/ContentFragment" />
+    </fragment>
+
+</navigation>
